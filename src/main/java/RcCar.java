@@ -28,6 +28,26 @@ public class RcCar {
 
 		We should get the position "4,1" (Should be 1,4 based on the derived movement algorithm, add justification to README")
 
+		----- Explanation -----
+		The correct output position for the third example should be 1,4 instead. The explanation is as follows:
+
+		Car starts facing north, R - car turns right, L - car turns left, F - car moves forward
+
+		For the first example,
+
+		```For the input "5,5:RFLFRFLF"
+
+	    We should get the position "7,7"```
+
+	    If car starts any position other than north, there is no output that matches the expected output (7,7),
+	    just for reference, start facing east (3,7), start facing west (7,3), start facing south (3,3). So only when
+	    the car start facing north AND following the movement rule, we can get the expected output (7,7).
+
+	    This holds true for the second example as well. This only fails for the third example where the output should be 1,4.
+
+	    I have looked at other possible movement patterns as well (the movement input is reverse so if it is RFLFRFLF
+	    then actual movement input is FLFRFLFR, needs a pair of two letters etc) but no pattern fulfil 2 out of 3 examples
+	    like the one above. So I have reason to believe that the expected output for the third example is wrong.
 	 **/
 
 	public static void main(String[] args) throws InterruptedException {
